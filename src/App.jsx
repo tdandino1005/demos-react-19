@@ -8,12 +8,13 @@ import catsData from "./data/cats";
 import groceriesData from "./data/groceries";
 import usersData from "./data/users";
 
-<NavBar />;
-
 function App() {
   return (
     <>
+      <NavBar />
+
       <Header text="Hello cat" />
+
       {catsData.map((cat) => {
         return <CatCard cat={cat} key={cat.id} />;
       })}
