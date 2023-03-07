@@ -1,7 +1,10 @@
 import CatCard from "./components/CatCard";
+import GroceryLI from "./components/GroceryLI";
 import Header from "./components/Header";
+import UserCard from "./components/UserCard";
 import catsData from "./data/cats";
 import groceriesData from "./data/groceries";
+import usersData from "./data/users";
 
 function App() {
   return (
@@ -13,9 +16,13 @@ function App() {
 
       <ul>
         {groceriesData.map((grocery) => {
-          return <li key={grocery.id}>{grocery.name}</li>;
+          return <GroceryLI grocery={grocery} key={grocery.id} />;
         })}
       </ul>
+
+      {usersData.map((user) => {
+        return <UserCard user={user} key={user.id.value} />;
+      })}
     </>
   );
 }
