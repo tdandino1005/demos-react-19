@@ -1,10 +1,14 @@
 import CatCard from "./components/CatCard";
+import Counter from "./components/Counter";
 import GroceryLI from "./components/GroceryLI";
 import Header from "./components/Header";
+import NavBar from "./components/NavBar";
 import UserCard from "./components/UserCard";
 import catsData from "./data/cats";
 import groceriesData from "./data/groceries";
 import usersData from "./data/users";
+
+<NavBar />;
 
 function App() {
   return (
@@ -23,6 +27,7 @@ function App() {
       {usersData.map((user) => {
         return <UserCard user={user} key={user.id.value} />;
       })}
+      <Counter />
     </>
   );
 }
