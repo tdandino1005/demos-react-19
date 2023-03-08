@@ -1,4 +1,4 @@
-// use state is a hook that allows us to use state in a functional component
+// 'useState' is used to tell React that we want to keep track of some information in this component
 import { useState } from "react";
 
 export default function Counter() {
@@ -7,15 +7,14 @@ export default function Counter() {
   return (
     <>
       <p>Here is the current count: {count}</p>;
-      <button type="button">Update count</button>;
       <button
         type="button"
         className="rounded bg-green-500 px-2 py-4 text-white"
         onClick={() => {
-          // prevent situations involving stale datat use the functional form of set state
-          // Bring in the previous state as a parameter
+          // Prevent situations involving stale data - use the callback version of 'setState'
+          // Bring in previous state AS A PARAMETER (not as a variable)
           // Return the new state
-          setCount((prevenCount) => prevenCount + 1);
+          setCount((prev) => prev + 1);
         }}
       >
         Update Count
