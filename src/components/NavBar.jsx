@@ -1,23 +1,24 @@
-export default function NavBar() {
+import PropTypes from "prop-types";
+
+export default function NavBar({ links, handleClick }) {
   return (
     <nav className="my-8">
       <ul className="flex justify-around gap-x-8">
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/cats">Cats</a>
-        </li>
-        <li>
-          <a href="/users">Users</a>
-        </li>
-        <li>
-          <a href="/groceries">Groceries</a>
-        </li>
-        <li>
-          <a href="/counter">Counter</a>
-        </li>
+        {links.map((link) => {
+          return (
+            <li key={link}>
+              <a href={`/${link.toLowerCase()}`} onClick={handleClick}>
+                {link}
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
 }
+
+NavBar.propTypes = {
+  links: PropTypes.arrayOf(PropTypes.string).isRequired,
+  handleClick: PropTypes.func.isRequired,
+};
