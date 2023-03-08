@@ -1,13 +1,12 @@
 import PropTypes from "prop-types";
 import CatCard from "../components/CatCard";
-import catsData from "../data/cats";
 
-export default function Cats() {
+export default function Cats({ catsData }) {
   return (
     <main className="container mx-auto space-y-8">
       <section>
-        <h2>🐱s</h2>
-        <div className="cards-container grid-cols-4">
+        <h2>🐱</h2>
+        <div className="cards-container grid-cols-5">
           {catsData.map((cat) => {
             return <CatCard cat={cat} key={cat.id} />;
           })}
